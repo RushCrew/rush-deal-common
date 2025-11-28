@@ -1,0 +1,65 @@
+plugins {
+	// 'java' 대신 'java-library'를 쓰면 'api' 키워드 사용 가능
+	id 'java-library'
+	id 'maven-publish'
+	id 'org.springframework.boot' version '3.5.8' apply false // boot 기능은 쓰지만 실행앱은 아니므로 false
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.rushcrew'
+version = '0.0.1-SNAPSHOT'
+description = 'Common Module for MSA Services'
+
+// 실행 가능한 jar가 아닌 일반 라이브러리 jar로 설정
+bootJar {
+	enabled = false
+}
+
+// 일반적인 라이브러리용 JAR 생성 활성화
+jar {
+	enabled = true
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// 다른 서비스에서도 이 의존성을 전파받아 쓰려면 'implementation' 대신 'api' 사용
+	api 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+// JitPack 배포 설정
+publishing {
+	publications {
+		// 'mavenJava'라는 이름으로 배포 설정 생성
+		create('mavenJava', MavenPublication) {
+			from components.java // Java 컴포넌트를 기반으로 함
+
+			groupId = project.group
+			artifactId = 'common-module' // 라이브러리 이름
+			version = project.version
+		}
+	}
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

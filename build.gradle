@@ -2,7 +2,7 @@ plugins {
 	// 'java' 대신 'java-library'를 쓰면 'api' 키워드 사용 가능
 	id 'java-library'
 	id 'maven-publish'
-	id 'org.springframework.boot' version '3.5.8' apply false // boot 기능은 쓰지만 실행앱은 아니므로 false
+	id 'org.springframework.boot' version '3.5.8' // boot 기능은 쓰지만 실행앱은 아니므로 false
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 

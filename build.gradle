@@ -39,6 +39,7 @@ repositories {
 dependencies {
 	// 다른 서비스에서도 이 의존성을 전파받아 쓰려면 'implementation' 대신 'api' 사용
 	api 'org.springframework.boot:spring-boot-starter-data-jpa'
+	api 'com.fasterxml.jackson.core:jackson-annotations'
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'

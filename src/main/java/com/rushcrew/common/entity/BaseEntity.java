@@ -42,11 +42,6 @@ public abstract class BaseEntity {
     @Column(name = "deleted_by")
     private Long deletedBy;
 
-    public void markDeleted(Long deleterId) {
-        this.deletedAt = java.time.LocalDateTime.now();
-        this.deletedBy = deleterId;
-    }
-
     public boolean isDeleted() {
         return this.deletedAt != null;
     }

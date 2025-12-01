@@ -18,7 +18,7 @@ repositories {
 
 dependencies {
      // 2. 공통 모듈 의존성 추가
-    implementation 'com.github.RushCrew:rush-deal-common:v0.0.5' // 버전을 확인하세요
+    implementation 'com.github.RushCrew:rush-deal-common:v0.0.6' // 버전을 확인하세요
 }
 ```
 
@@ -136,7 +136,7 @@ if (stock < 1) {
 기능 추가나 버그 수정 시 jitpack.yml 및 build.gradle 버전을 올리고 Github Release를 생성해야 합니다.
 버전별 변경 이력은 아래와 같습니다.
 
-- v0.0.1 ~ v0.0.5: 초기 구성 (BaseEntity, ApiResponse, Exception)
+- v0.0.1 ~ v0.0.6: 초기 구성 (BaseEntity, ApiResponse, Exception)
 
 
 

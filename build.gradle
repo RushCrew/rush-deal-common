@@ -2,11 +2,11 @@ plugins {
 	// 'java' 대신 'java-library'를 쓰면 'api' 키워드 사용 가능
 	id 'java-library'
 	id 'maven-publish'
-	id 'org.springframework.boot' version '3.5.8' // boot 기능은 쓰지만 실행앱은 아니므로 false
+	id 'org.springframework.boot' version '3.5.8'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
-group = 'com.rushcrew'
+group = 'com.github.RushCrew'
 version = '0.0.1-SNAPSHOT'
 description = 'Common Module for MSA Services'
 
@@ -58,6 +58,17 @@ publishing {
 			groupId = project.group
 			artifactId = 'common-module' // 라이브러리 이름
 			version = project.version
+
+			// Gradle이 빌드 시점에 결정된 Spring Boot의 버전(예: 3.x.x)을 찾아서,
+			// 배포되는 pom.xml 파일에 자동으로 기입
+			versionMapping {
+				usage('java-api') {
+					fromResolutionOf('runtimeClasspath')
+				}
+				usage('java-runtime') {
+					fromResolutionOf('runtimeClasspath')
+				}
+			}
 		}
 	}
 }

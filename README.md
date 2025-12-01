@@ -42,7 +42,6 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-@EnableJpaAuditing // [필수] BaseEntity의 날짜 자동 생성을 위해 필요
 @SpringBootApplication
 @ComponentScan(basePackages = {
     "com.rushdeal.order",           // 1. 현재 내 서비스 패키지

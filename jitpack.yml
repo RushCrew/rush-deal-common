@@ -6,4 +6,8 @@ before_install:
   - ./gradlew clean
 
 install:
-  - ./gradlew publishToMavenLocal
+  - ./gradlew publishToMavenLocal --no-daemon
+
+cache:
+  directories:
+    - .gradle

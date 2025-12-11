@@ -18,7 +18,7 @@ repositories {
 
 dependencies {
      // 2. 공통 모듈 의존성 추가
-    implementation 'com.github.RushCrew:rush-deal-common:v0.0.7' // 버전을 확인하세요
+    implementation 'com.github.RushCrew:rush-deal-common:v0.0.9' // 버전을 확인하세요
 }
 ```
 
@@ -136,7 +136,7 @@ if (stock < 1) {
 버전별 변경 이력은 아래와 같습니다.
 
 - v0.0.1 ~ v0.0.7: 초기 구성 (BaseEntity, ApiResponse, Exception)
-- v0.0.8 : UserRole, GlobalExceptionHandler 추가 변경
+- v0.0.8 ~ v0.0.9 : UserRole, GlobalExceptionHandler 추가 변경
 
 
 

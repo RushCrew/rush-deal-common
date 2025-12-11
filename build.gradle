@@ -8,7 +8,7 @@ plugins {
 
 // ★ 중요: JitPack 규칙에 맞춰 Group ID 변경
 group = 'com.github.RushCrew'
-version = '0.0.8'
+version = '0.0.9'
 description = 'Common Module for MSA Services'
 
 // 실행 가능한 jar가 아닌 일반 라이브러리 jar로 설정

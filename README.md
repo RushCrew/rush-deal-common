@@ -136,6 +136,7 @@ if (stock < 1) {
 버전별 변경 이력은 아래와 같습니다.
 
 - v0.0.1 ~ v0.0.7: 초기 구성 (BaseEntity, ApiResponse, Exception)
+- v0.0.8 : UserRole, GlobalExceptionHandler 추가 변경
 
 
 
